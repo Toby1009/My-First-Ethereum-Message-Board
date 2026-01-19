@@ -1,18 +1,21 @@
 'use client';
 
 import { RainbowKitProvider, getDefaultConfig, darkTheme } from '@rainbow-me/rainbowkit';
-import { WagmiProvider, http } from 'wagmi';
+import { WagmiProvider, cookieStorage, createStorage, http } from 'wagmi';
 import { sepolia } from 'wagmi/chains';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 
 const config = getDefaultConfig({
     appName: 'Chain Message Board',
-    projectId: 'c4f79cc821944d9680842e34466bfb', // Replace with your WalletConnect Cloud project ID
+    projectId: 'c4f79cc821944d9680842e34466bfb',
     chains: [sepolia],
     transports: {
         [sepolia.id]: http(),
     },
     ssr: true,
+    storage: createStorage({
+        storage: cookieStorage,
+    }),
 });
 
 const queryClient = new QueryClient();
