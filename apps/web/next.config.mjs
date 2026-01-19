@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  transpilePackages: ['@my-first-dapp/chain-board-sdk'],
   webpack: (config) => {
     config.externals.push('pino-pretty', 'lokijs', 'encoding')
     config.resolve.fallback = {
