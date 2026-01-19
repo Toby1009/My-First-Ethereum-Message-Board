@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 7%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 10%;
+  --card-foreground: 0 0% 98%;
+  --primary: 265 90% 70%;
+  --primary-foreground: 0 0% 10%;
+  --secondary: 230 80% 60%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 65%;
+  --accent: 340 82% 60%;
+  --border: 0 0% 18%;
+  --ring: 265 90% 70%;
+  --radius: 0.75rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  min-height: 100vh;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+body {
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, hsla(265, 90%, 60%, 0.15), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 100%, hsla(340, 82%, 50%, 0.1), transparent);
+  background-attachment: fixed;
+}
+
+/* Glassmorphism card utility */
+.glass-card {
+  background: hsla(0, 0%, 100%, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid hsla(0, 0%, 100%, 0.08);
+  border-radius: var(--radius);
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
