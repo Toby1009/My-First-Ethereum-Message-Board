@@ -1,5 +1,3 @@
-'use client';
-
 import { Header, MessageBoard, MessageInput } from '@/components';
 
 export const dynamic = 'force-dynamic';
